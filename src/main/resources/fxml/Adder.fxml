@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="249.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.mrsnuff.powerly.controllers.Adder">
+   <children>
+      <Button layoutX="66.0" layoutY="193.0" mnemonicParsing="false" text="Добавить" />
+      <TextField alignment="TOP_CENTER" layoutX="26.0" layoutY="45.0" promptText="Имя компьютера" AnchorPane.topAnchor="20.0" />
+      <TextField alignment="TOP_CENTER" layoutX="26.0" layoutY="86.0" promptText="IP-адрес" AnchorPane.topAnchor="60.0" />
+      <TextField alignment="TOP_CENTER" layoutX="26.0" layoutY="125.0" promptText="Имя пользователя" AnchorPane.topAnchor="100.0" />
+      <TextField alignment="TOP_CENTER" layoutX="26.0" layoutY="169.0" promptText="Пароль" AnchorPane.topAnchor="140.0" />
+   </children>
+</AnchorPane>
