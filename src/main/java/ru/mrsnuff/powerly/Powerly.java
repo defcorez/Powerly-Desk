@@ -61,7 +61,6 @@ public class Powerly extends Application {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.setAlwaysOnTop(true);
-        stage.setTitle("Добавить");
         stage.show();
     }
 }
