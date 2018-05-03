@@ -10,9 +10,9 @@ import java.io.IOException;
 
 public class Powerly extends Application {
 
-    private static Powerly instanse;
-    public static Powerly getInstanse() {
-        return instanse;
+    private static Powerly instance;
+    public static Powerly getInstance() {
+        return instance;
     }
 
     public static void main(String[] args) {
@@ -25,7 +25,7 @@ public class Powerly extends Application {
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
         initStage();
-        instanse = this;
+        instance = this;
     }
 
     private void initStage() throws IOException {

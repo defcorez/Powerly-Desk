@@ -7,6 +7,6 @@ import java.io.IOException;
 public class Main {
 
     public void addComputer() throws IOException {
-        Powerly.getInstanse().showAdder();
+        Powerly.getInstance().showAdder();
     }
 }
