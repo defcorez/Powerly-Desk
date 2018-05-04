@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/powerly.iml" filepath="$PROJECT_DIR$/.idea/modules/powerly.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/powerly_main.iml" filepath="$PROJECT_DIR$/.idea/modules/powerly_main.iml" group="powerly" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/powerly_test.iml" filepath="$PROJECT_DIR$/.idea/modules/powerly_test.iml" group="powerly" />
+    </modules>
+  </component>
+</project>
