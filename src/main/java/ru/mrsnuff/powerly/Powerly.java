@@ -2,8 +2,11 @@ package ru.mrsnuff.powerly;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,8 +23,14 @@ public class Powerly extends Application {
     }
 
     private Stage primaryStage;
-    private Parent root;
-    private Scene scene;
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
+    private Stage secondaryStage;
+    public Stage getSecondaryStage() {
+        return secondaryStage;
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -38,31 +47,22 @@ public class Powerly extends Application {
     }
 
     private void showLoader() throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/fxml/Loader.fxml"));
-
-        scene = new Scene(root);
-
-        setScene(scene);
+        setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxml/Loader.fxml"))));
     }
 
     public void showMain() throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/fxml/Main.fxml"));
-
-        scene = new Scene(root);
-
-        setScene(scene);
+        setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxml/Main.fxml"))));
     }
 
     public void showAdder() throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/fxml/Adder.fxml"));
+        secondaryStage = new Stage();
 
-        scene = new Scene(root);
-
-        Stage stage = new Stage();
-
-        stage.setScene(scene);
-        stage.setAlwaysOnTop(true);
-        stage.show();
+        secondaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxml/Adder.fxml"))));
+        secondaryStage.setResizable(false);
+        secondaryStage.setTitle("Добавить компьютер");
+        secondaryStage.initOwner(primaryStage);
+        secondaryStage.initModality(Modality.WINDOW_MODAL);
+        secondaryStage.showAndWait();
     }
 
     private void setScene(Scene scene) {
