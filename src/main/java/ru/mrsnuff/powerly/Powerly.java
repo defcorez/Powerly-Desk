@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import ru.mrsnuff.powerly.utils.SQL;
 
 import java.io.IOException;
 
@@ -20,6 +21,7 @@ public class Powerly extends Application {
 
     public static void main(String[] args) {
         launch(args);
+        SQL.init();
     }
 
     private Stage primaryStage;

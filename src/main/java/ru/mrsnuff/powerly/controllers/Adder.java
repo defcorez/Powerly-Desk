@@ -5,6 +5,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import ru.mrsnuff.powerly.Powerly;
 import ru.mrsnuff.powerly.model.Computer;
+import ru.mrsnuff.powerly.utils.SQL;
 
 public class Adder {
 
@@ -16,6 +17,7 @@ public class Adder {
     @FXML
     public void addComputer() {
         Main.getInstance().getComputersData().add(new Computer(nameField.getText(), ipField.getText(), userField.getText(), passwordField.getText()));
+        SQL.exec("INSERT INTO computers (name, ip, user, password) VALUES (" + nameField.getText() + ", " + ipField.getText() + ", " + userField.getText() + ", " + passwordField.getText() + ");");
         Powerly.getInstance().getSecondaryStage().close();
     }
 
