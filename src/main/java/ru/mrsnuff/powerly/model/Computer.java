@@ -4,17 +4,15 @@ public class Computer {
 
     private String name;
     private String ip;
-    private String status;
 
     private String user;
     private String password;
 
     public Computer() {}
 
-    public Computer(String name, String ip, String status, String user, String password) {
+    public Computer(String name, String ip, String user, String password) {
         this.name = name;
         this.ip = ip;
-        this.status = status;
 
         this.user = user;
         this.password = password;
@@ -34,13 +32,5 @@ public class Computer {
 
     public void setIp(String ip) {
         this.ip = ip;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 }

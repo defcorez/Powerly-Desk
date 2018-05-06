@@ -39,9 +39,9 @@ public class Main {
 
         tableComputers.setItems(computersData);
 
-        computersData.add(new Computer("Основной", "192.168.1.100", "Online", "123", "123"));
-        computersData.add(new Computer("Соседний", "192.168.1.101", "Offline", "123", "123"));
-        computersData.add(new Computer("Домашний сервер", "192.168.1.102", "Online", "123", "123"));
+        computersData.add(new Computer("Основной", "192.168.1.100", "123", "123"));
+        computersData.add(new Computer("Соседний", "192.168.1.101", "123", "123"));
+        computersData.add(new Computer("Домашний сервер", "192.168.1.102", "123", "123"));
     }
 
     @FXML

@@ -15,7 +15,7 @@ public class Adder {
 
     @FXML
     public void addComputer() {
-        Main.getInstance().getComputersData().add(new Computer(nameField.getText(), ipField.getText(), "Offline", userField.getText(), passwordField.getText()));
+        Main.getInstance().getComputersData().add(new Computer(nameField.getText(), ipField.getText(), userField.getText(), passwordField.getText()));
         Powerly.getInstance().getSecondaryStage().close();
     }
 
