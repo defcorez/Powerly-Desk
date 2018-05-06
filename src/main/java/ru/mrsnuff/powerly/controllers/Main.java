@@ -3,7 +3,7 @@ package ru.mrsnuff.powerly.controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ColorPicker;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -51,6 +51,17 @@ public class Main {
 
     @FXML
     public void removeComputer() {
+        int selectedIndex = tableComputers.getSelectionModel().getFocusedIndex();
+        if (selectedIndex >= 0) {
+            tableComputers.getItems().remove(selectedIndex);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(Powerly.getInstance().getPrimaryStage());
+            alert.setTitle("Внимание");
+            alert.setHeaderText("Компьютер не выбран");
+            alert.setContentText("Перед удалением компьютера его необходимо выбрать");
 
+            alert.showAndWait();
+        }
     }
 }
