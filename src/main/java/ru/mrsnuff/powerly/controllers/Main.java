@@ -9,8 +9,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import ru.mrsnuff.powerly.Powerly;
 import ru.mrsnuff.powerly.model.Computer;
+import ru.mrsnuff.powerly.utils.H2DB;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class Main {
 
@@ -30,7 +32,7 @@ public class Main {
     @FXML private TableColumn<Computer, String> statusColumn;
 
     @FXML
-    private void initialize() {
+    private void initialize() throws SQLException {
         instance = this;
 
         nameColumn.setCellValueFactory(new PropertyValueFactory<Computer, String>("name"));
@@ -39,9 +41,7 @@ public class Main {
 
         tableComputers.setItems(computersData);
 
-        computersData.add(new Computer("Основной", "192.168.1.100", "123", "123"));
-        computersData.add(new Computer("Соседний", "192.168.1.101", "123", "123"));
-        computersData.add(new Computer("Домашний сервер", "192.168.1.102", "123", "123"));
+        H2DB.initTable();
     }
 
     @FXML
@@ -53,6 +53,8 @@ public class Main {
     public void removeComputer() {
         int selectedIndex = tableComputers.getSelectionModel().getFocusedIndex();
         if (selectedIndex >= 0) {
+            H2DB.removeComputer(tableComputers.getItems().get(selectedIndex).getName());
+
             tableComputers.getItems().remove(selectedIndex);
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
