@@ -1,6 +1,5 @@
 package ru.mrsnuff.powerly.utils;
 
-import ru.mrsnuff.powerly.Powerly;
 import ru.mrsnuff.powerly.controllers.Main;
 import ru.mrsnuff.powerly.model.Computer;
 

@@ -35,9 +35,9 @@ public class Main {
     private void initialize() throws SQLException {
         instance = this;
 
-        nameColumn.setCellValueFactory(new PropertyValueFactory<Computer, String>("name"));
-        ipColumn.setCellValueFactory(new PropertyValueFactory<Computer, String>("ip"));
-        statusColumn.setCellValueFactory(new PropertyValueFactory<Computer, String>("status"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        ipColumn.setCellValueFactory(new PropertyValueFactory<>("ip"));
+        statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         tableComputers.setItems(computersData);
 
